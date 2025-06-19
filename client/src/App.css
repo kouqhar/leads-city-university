@@ -2,12 +2,12 @@ img {
   width: 100%;
 }
 
-.verified-container{
+.verified-container {
   position: relative;
   display: block;
 }
 
-.verified{
+.verified {
   width: 20px;
   height: 20px;
   position: absolute;
@@ -21,7 +21,7 @@ img {
   background: url('./img/uniConnLandingImage.jpeg') no-repeat;
   background-size: cover;
   background-position: center;
-  height: 85vh;
+  height: 80vh;
   margin-top: -24px;
   margin-bottom: -50px;
 }
@@ -52,7 +52,7 @@ img {
   color: #bbb !important;
 }
 
-.devFooter{
+.devFooter {
   width: auto;
   bottom: 0;
   background: rgb(52, 58, 64);
