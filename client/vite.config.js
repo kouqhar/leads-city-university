@@ -5,7 +5,6 @@ export default ({ mode }) => {
   // Load env vars based on current mode (development, production, etc.)
   // eslint-disable-next-line no-undef
   const env = loadEnv(mode, process.cwd());
-  console.log("The env ", { mode, env });
 
   return defineConfig({
     plugins: [react()],

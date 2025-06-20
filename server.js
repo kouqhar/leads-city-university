@@ -20,6 +20,7 @@ app.use(bodyParser.json());
 
 // DB config
 const db = require("./config/keys").mongoURI;
+const feURI = require("./config/keys").feURI;
 
 // Connect to mongoDB through mongoose
 mongoose
@@ -39,9 +40,18 @@ mongoose
 app.use(passport.initialize());
 
 // Configure CORS to allow requests from your frontend
+
+const allowedOrigins = ["http://localhost:5173", feURI];
+
 app.use(
   cors({
-    origin: "http://localhost:5173", // Specify the origin of your frontend
+    origin: function (origin, callback) {
+      // allow requests with no origin (like mobile apps, curl, or Postman)
+      if (!origin) return callback(null, true);
+
+      if (allowedOrigins.includes(origin)) return callback(null, true);
+      else return callback(new Error("Not allowed by CORS"));
+    }, // Specify the origin of your frontend
     methods: ["GET", "POST", "PUT", "DELETE"], // Allow the methods your frontend uses
     allowedHeaders: ["Content-Type", "Authorization"], // Allow the headers your frontend sends
   })

@@ -6,40 +6,42 @@ class ProfileCreds extends Component {
     const { experience, education } = this.props;
 
     // Experience Section
-    const expItems = experience.map((exp) => (
-      <li className="list-group-item" key={exp._id}>
-        <h4>{exp.company}</h4>
-        <p>
-          <strong>Date: </strong>
-          {moment(exp?.from).format("YYYY/MM/DD")} -
-          {exp.to === null ? (
-            " Now"
-          ) : (
-            <>{moment(exp?.to).format("YYYY/MM/DD")}</>
-          )}
-        </p>
-        <p>
-          <strong>Position: </strong>
-          {exp.title}
-        </p>
-        <p>
-          {exp.location === "" ? null : (
-            <span>
-              <strong>Location: </strong>
-              {exp.location}
-            </span>
-          )}
-        </p>
-        <p>
-          {exp.description === "" ? null : (
-            <span>
-              <strong>Description: </strong>
-              {exp.description}
-            </span>
-          )}
-        </p>
-      </li>
-    ));
+    const expItems =
+      experience &&
+      experience.map((exp) => (
+        <li className="list-group-item" key={exp._id}>
+          <h4>{exp.company}</h4>
+          <p>
+            <strong>Date: </strong>
+            {moment(exp?.from).format("YYYY/MM/DD")} -
+            {exp.to === null ? (
+              " Now"
+            ) : (
+              <>{moment(exp?.to).format("YYYY/MM/DD")}</>
+            )}
+          </p>
+          <p>
+            <strong>Position: </strong>
+            {exp.title}
+          </p>
+          <p>
+            {exp.location === "" ? null : (
+              <span>
+                <strong>Location: </strong>
+                {exp.location}
+              </span>
+            )}
+          </p>
+          <p>
+            {exp.description === "" ? null : (
+              <span>
+                <strong>Description: </strong>
+                {exp.description}
+              </span>
+            )}
+          </p>
+        </li>
+      ));
 
     // Education Section
     const eduItems = education.map((edu) => (
