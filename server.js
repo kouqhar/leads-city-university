@@ -41,7 +41,10 @@ app.use(passport.initialize());
 
 // Configure CORS to allow requests from your frontend
 
-const allowedOrigins = ["http://localhost:5173", feURI];
+const allowedOrigins = [
+  "http://localhost:5173",
+  "https://leadcityalumni.netlify.app/",
+];
 
 app.use(
   cors({
