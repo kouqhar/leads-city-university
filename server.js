@@ -57,6 +57,7 @@ app.use(
     }, // Specify the origin of your frontend
     methods: ["GET", "POST", "PUT", "DELETE"], // Allow the methods your frontend uses
     allowedHeaders: ["Content-Type", "Authorization"], // Allow the headers your frontend sends
+    credentials: true,
   })
 );
 
