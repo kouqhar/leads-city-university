@@ -1,4 +1,3 @@
-import axios from "axios";
 import axiosApi from "../api/axios";
 
 const setAuthToken = (token) => {
