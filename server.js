@@ -43,7 +43,7 @@ app.use(passport.initialize());
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://leadcityalumni.netlify.app/",
+  "https://leadcityalumni.netlify.app",
 ];
 
 app.use(
